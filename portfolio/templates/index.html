@@ -1,0 +1,281 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Patience Ajimuda</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="media/{{picture.logo}}" rel="icon" sizes="96x96" type="image/png">
+		<!-- CSS
+        ================================================ -->
+        <!-- Owl Carousel -->
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <!-- bootstrap.min css -->
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ">
+        <!-- Font-awesome.min css -->
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <!-- Responsive Stylesheet -->
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+		<!-- Js -->
+        <script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+        <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="{% static 'js/jquery.nav.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </head>
+    
+	<body>
+	<!--
+	header-img start 
+	============================== -->
+    <section id="hero-area">
+      <img class="img-responsive" src='media/{{ picture.header }}' alt="">
+    </section>
+	<!--
+
+    Header start 
+	============================== -->
+	<nav id="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <nav class="navbar navbar-default">
+                          <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </button>
+                                  <a class="navbar-brand" href="#about-us">
+                                    <img src="media/{{ picture.logo }}" alt="Logo">
+                                  </a>
+
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav navbar-right" id="top-nav">
+                                <li><a href="#hero-area">Home</a></li>
+                                <li><a href="#about-us">About me</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#contact-us">Contacts</a></li>
+                              </ul>
+                            </div><!-- /.navbar-collapse -->
+                          </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </div><!-- .container close -->
+    </nav><!-- header close -->
+    
+
+    <!--
+    Slider start
+    ============================== -->
+    <section id="slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="title">
+                            <h3>Featured <span>Works</span></h3>
+                        </div>
+                        <div id="owl-example" class="owl-carousel">
+                            {% for feature in features %}
+                                <div>
+                                    <img class="img-responsive" src="media/{{ feature.image }}" alt="">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </div><!-- .container close -->
+    </section><!-- slider close -->
+    
+
+    <!--
+    about-me start
+    ============================== -->
+    <section id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <img class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms" style = 'height: 150px; border-radius: 50%' src="media/{{picture.chef}}" alt="Patience Ajimuda">
+                        <h1 class="heading wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms" >About <span>Me</span> 
+                        </h1>
+                        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="600ms">I AM AJIMUDA PATIENCE</p>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </div><!-- .containe close -->
+    </section><!-- #call-to-action close -->
+
+
+    <!--
+    blog start
+    ============================ -->
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1 class="heading">Latest <span>From</span> the <span>Blog</span></h1>
+                        <ul>
+                            {% for blog in blogs %}
+                                <li class="wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="300ms">
+                                    <div class="blog-img">
+                                        <img src="media\{{ blog.image }}" alt="{{ blog.title }}">
+                                    </div>
+                                    <div class="content-right">
+                                        <h3>{{ blog.title }}</h3>
+                                        <p>{{ blog.description }}</p>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </div><!-- .containe close -->
+    </section><!-- #blog close -->
+    <!-- 
+
+
+    CONTACT Me  start
+    ============================= -->
+    <section id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h1 class="heading wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">you can <span>CONTACT Me</span></h1>
+                        <h3 class="title wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">Send me a <span>Messasge</span> </h3>
+                        <form method = 'POST'>
+                        {% csrf_token %}
+                            <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms">
+                                <input type="text" name = "name" class="form-control" id="exampleInputEmail1" placeholder="Write your full name here..." required="">
+                            </div>
+                            <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="800ms">
+                                <input type="text" class="form-control" name = "email" placeholder="Write your email address here..." required="">
+                            </div>
+                            <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1000ms">
+                                <textarea class="form-control" rows="3" name = "message" required="" placeholder="Write your message here..."></textarea>
+                            </div>
+                            
+                            <button class="btn btn-default wow bounceIn" data-wow-duration="500ms" data-wow-delay="1300ms" style = "background : #FF4F02; float: right; color: white; width: 512px; border-radius: 30px; height: 50px;" type ="submit">Send Message</button>
+                            {% for message in messages %}
+                                <p class =  'btn btn-default' style = "background: #6df39c; color: #fff; font-weight: 600; text-transform: uppercase; border-radius: 30px; border: 0px; width: 480px; height: 50px; padding: 15px; text-align : center ">{{ message }}</p>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div><!-- .col-md-12 close -->
+            </div><!-- .row close -->
+        </div><!-- .container close -->
+    </section><!-- #contact-us close -->
+
+
+    <!--
+    footer  start
+    ============================= -->
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="block wow fadeInLeft"  data-wow-delay="200ms">
+                        <h3>CONTACT <span>INFO</span></h3>
+                        <div class="info">
+                            <ul>
+                                <li>
+                                  <h4><i class="fa fa-phone"></i>Telephone</h4>
+                                  <p> (+234)815 064 0208 <br> (+234)817 012 8513</p>
+                                    
+                                </li>
+                                <li>
+                                  <h4><i class="fa fa-map-marker"></i>Address</h4>
+                                  <p>8, Abimbola street, Alapere Ketu, Lagos, Nigeria</p>
+                                </li>
+                                <li>
+                                  <h4><i class="fa fa-envelope"></i>E-mail</h4>
+                                  <p>ajimudapat16@gmail.com</p>
+                                  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .col-md-4 close -->
+                <div class="col-md-4">
+                    <div class="block wow fadeInLeft"  data-wow-delay="700ms">
+                        <div class="blog">
+                        </div>
+                    </div>
+                </div>
+                <!-- .col-md-4 close -->
+                <div class="col-md-4">
+                    <div class="block wow fadeInLeft"  data-wow-delay="1100ms">
+                        <div class="gallary">
+                        </div>
+                        <div class="social-media-link">
+                            <h3>Follow <span>ME</span></h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.instagram.com/pataanu_ajjimuda" target = '_blank'>
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://facebook.com/patienceajimuda" target = '_blank'>
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/mwlite/in/ajimuda-patience-151465169" target = '_blank'>
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .col-md-4 close -->
+            </div><!-- .row close -->
+        </div><!-- .containe close -->
+    </section><!-- #footer close -->
+    <!--
+
+        
+    footer-bottom  start
+    ============================= -->
+    <footer id="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="block">
+                        <p> &copy; 2020 - <a href = "http://sirdesmond.pythonanywhere.com" target = '_blank'>Desmond Nnebue </a>08038459141</p> 
+                        <p>Template by &copy; 2014 - All Rights Reserved. <a href="http://www.themefisher.com" target = '_blank'>Themefisher</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	</body>
+</html>

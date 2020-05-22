@@ -25,7 +25,7 @@ SECRET_KEY = ')r1hgc_yqn3p1w-ewd$omxxst4*ymi1wku=h1e5t5jtr793l%y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'aanuspat.pythonanywhere.com']
+ALLOWED_HOSTS = ['aanuspat.pythonanywhere.com']
 
 
 # Application definition

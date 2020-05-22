@@ -1,0 +1,1 @@
+This is a simple portfolio site for a chef. Implemented with django. The user is able to add images of food, food name and description and it shows in the blog section of the site.

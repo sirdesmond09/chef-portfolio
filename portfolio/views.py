@@ -8,7 +8,7 @@ def homeview(request):
 
     blogs = Blog.objects.all().order_by('-created')[:6]
     
-    features = Blog.objects.all()
+    features = Blog.objects.all().order_by('-title')
 
     picture = Picture.objects.get(pk = 1)
 
